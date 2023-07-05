@@ -1,0 +1,28 @@
+import java.util.Random;
+
+public class RandomFunctions {
+
+    public static void random_function_1() {
+        System.out.println("This is random function 1");
+    }
+
+    public static void random_function_2() {
+        System.out.println("This is random function 2");
+    }
+
+    // Інші функції random_function_3, random_function_4, і так далі...
+
+    public static void random_function_100() {
+        System.out.println("This is random function 100");
+    }
+
+    public static void main(String[] args) {
+        // Створення масиву з усіма функціями
+        Runnable[] random_functions = {RandomFunctions::random_function_1, RandomFunctions::random_function_2, ..., RandomFunctions::random_function_100};
+
+        // Виклик рандомної функції
+        Random random = new Random();
+        int randomIndex = random.nextInt(random_functions.length);
+        random_functions[randomIndex].run();
+    }
+}
